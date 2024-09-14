@@ -1,3 +1,6 @@
+import Fila.Processos.FilaProcessos;
+import Fila.SistemaAtendimento.SimuladorAtendimento;
+import Fila.SistemaGerenciamento.GerenciamentoImpressao;
 import Lista_Dupla.Editor.EditorTexto;
 import Lista_Dupla.JogoCarta.MaoDeCartas;
 import Lista_Simples.gerenciadorTarefas.GerenciadorTarefas;
@@ -18,12 +21,15 @@ public class Main {
             System.out.println("3. Sistema de Reversão (Undo)");
             System.out.println("4. Editor de Texto");
             System.out.println("5. Jogo de Cartas");
-            System.out.println("6. Sair");
+            System.out.println("6. Simulador de Fila de Atendimento em Banco");
+            System.out.println("7. Sistema de Gerenciamento de Impressões");
+            System.out.println("8. Fila de Processos Prontos para Execução");
+            System.out.println("9. Sair");
 
             int opcao = scanner.nextInt();
             scanner.nextLine();  // Consumir a nova linha
 
-            if (opcao == 6) {
+            if (opcao == 9) {
                 break;
             }
 
@@ -43,7 +49,15 @@ public class Main {
                 case 5:
                     jogoDeCartas(scanner);
                     break;
-
+                case 6:
+                    SimuladorAtendimento.main(new String[] {});
+                    break;
+                case 7:
+                    GerenciamentoImpressao.main(new String[] {});
+                    break;
+                case 8:
+                    FilaProcessos.main(new String[] {});
+                    break;
                     default:
                     System.out.println("Opção inválida.");
             }
@@ -220,4 +234,8 @@ public class Main {
             }
         }
     }
+
+
+    // Método para o Sistema de Gerenciamento de Impressões
+
 }
